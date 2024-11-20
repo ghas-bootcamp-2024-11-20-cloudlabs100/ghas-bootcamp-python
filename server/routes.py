@@ -64,14 +64,13 @@ def index():
 #         logging.debug(str(template))
 #         return render_template_string(template)
 
-
-# @flaskapp.route("/get_users")
-# def get_users():
-#     try:
-#         hostname = request.args.get("hostname")
-#         command = "dig " + hostname
-#         data = subprocess.check_output(command, shell=True)
-#         return data
-#     except:
-#         data = str(hostname) + " username not found"
-#         return data
+ @flaskapp.route("/get_users")
+ def get_users():
+     try:
+         hostname = request.args.get("hostname")
+         command = "dig " + hostname
+         data = subprocess.check_output(command, shell=True) 
+         return data
+     except:
+         data = str(hostname) + " username not found"
+         return data
