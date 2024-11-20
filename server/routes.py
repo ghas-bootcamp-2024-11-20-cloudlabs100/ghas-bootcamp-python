@@ -9,6 +9,7 @@ import subprocess
 logging.basicConfig(filename="logs.log", filemode="w", level=logging.DEBUG)
 
 
+
 @flaskapp.route("/")
 def index():
     name = request.args.get("name")
